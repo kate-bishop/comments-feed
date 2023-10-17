@@ -1,8 +1,16 @@
-# Comments Feed
+# Kate Bishop's Comments Feed UI
 
-This app displays a list of comments posted on a feed.
+This app is for users to read and post comments in a feed. If a comment is posted while the user is on the page, they will receive a notification.
+
+For local testing usage, buttons are provided to seed the comment feed, and delete all comments.
 
 ## How to Run Locally
+
+I made a few updates to the provided front-end-cyoa repository that are needed to run this app locally. Please clone [comments-feed-api](https://github.com/kate-bishop/comments-feed-api) and use as the API server. Those changes include:
+
+1. CORS configured to accept calls from localhost:3000 ([see configuration here](https://github.com/kate-bishop/comments-feed-api/blob/main/server/index.js#L10))
+2. Package version for sqlite3 updated to "^5.0.3"
+    - Depending on the version installed on your machine, you may need to downgrade this package back to "^4.0.7"
 
 ### comments-feed
 
@@ -15,12 +23,7 @@ yarn start
 
 ### comments-feed-api
 
-Start the API so it runs on localhost:3001. I made a few updates to the provided front-end-cyoa repository to resolve some errors on my machine:
-
-1. Updated sqlite3 version to "^5.0.3" (originally "^4.0.7")
-2. In `./server/index`, configured cors to accept calls from localhost:3000
-
-Those changes can be found in [comments-feed-api](https://github.com/kate-bishop/comments-feed-api). Everything else is the same, so you can run that server with:
+Start the API so it runs on localhost:3001:
 
 ```
 npm install
@@ -38,4 +41,7 @@ npm run dev
 - [ ] Write tests
 
 ### Future Features
-- Sort order
+- Lazy loading/pagination
+- Use websocket instead of polling for new comments
+- Sort and filter comments
+- Author can edit or delete a post
