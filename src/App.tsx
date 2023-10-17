@@ -9,11 +9,9 @@ const App: React.FC = () => {
   const [comments, setComments] = useState<Comment[]>([])
 
   useEffect(() => {
-    if (!comments.length) {
-      getComments().then((data) => {
-        setComments(data);
-      });
-    }
+    getComments().then((data) => {
+      setComments(data);
+    });
   }, [])
 
   const clearComments = () => {
@@ -30,17 +28,22 @@ const App: React.FC = () => {
   }
 
   return (
-    <div className="App">
-      <header className="App-header">
+    <div className="app">
+      <header className="app-header">
         <h1>
           Comments Feed
         </h1>
+        <div className="buttons-container">
+          <button onClick={clearComments} className="delete">Clear Comments</button>
+          <button onClick={seedComments} className="seed">Seed Comments</button>
+        </div>
       </header>
-      {comments.map((comment) => {
-        return <CommentCard comment={comment} key={comment.id} />
-      })}
-      <button onClick={clearComments}>Clear Comments</button>
-      <button onClick={seedComments}>Seed Comments</button>
+      <body>
+        <div className="comments-container">
+          {comments.map((comment) => {
+            return <CommentCard comment={comment} key={comment.id} />
+          })}</div>
+      </body>
     </div>
   );
 }

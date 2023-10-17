@@ -8,11 +8,13 @@ interface CommentCardProps {
 const CommentCard: React.FC<CommentCardProps> = ({
   comment
 }) => {
+  const dateTime = new Date(comment.created);
+  const dateTimeString = `${dateTime.toDateString()} at ${dateTime.toLocaleTimeString()}`;
+  
   return (
     <div className="comment-card" key={comment.id}>
-      <p>{comment.message}</p>
-      <p>{comment.name}</p>
-      <p>{new Date(comment.created).toDateString()}</p>
+      <p className="message">{comment.message}</p>
+      <p className="name">{comment.name} on {dateTimeString}</p>
     </div>
   );
 }
