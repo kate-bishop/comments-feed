@@ -5,19 +5,25 @@ const headers = {
 
 export const postComment = (name: string, message: string) => {
     const comment = { name, message }
-    fetch(`${url}/createComment`, { method: "POST", headers, body: JSON.stringify(comment) }).then((data) => {
-        return data;
-    }).catch((error) => {
-        console.error('Error posting comment', error);
-    })
+    return fetch(`${url}/createComment`, { method: "POST", headers, body: JSON.stringify(comment) }).then((response) => {
+        return response.json().then((data) => {
+            return data;
+        }).catch((error) => {
+            console.error('Error posting comment', error);
+            return null;
+        })
+    });
 }
 
 export const getCommentById = (id: number) => {
-    fetch(`${url}/getComment`, { method: "GET", headers, body: JSON.stringify({ id: id }) }).then((data) => {
-        return data;
-    }).catch((error) => {
-        console.error(`Error getting comment ${id}`, error);
-    })
+    return fetch(`${url}/getComment`, { method: "GET", headers }).then((response) => {
+        return response.json().then((data) => {
+            return data;
+        }).catch((error) => {
+            console.error(`Error getting comment ${id}`, error);
+            return null;
+        })
+    });
 }
 
 export const getComments = () => {
@@ -32,9 +38,7 @@ export const getComments = () => {
 }
 
 export const deleteComments = () => {
-    fetch(`${url}/deleteComments`, { method: "DELETE", headers }).then((data) => {
-        return data;
-    }).catch((error) => {
-        console.error('Error deleting comments', error);
+    return fetch(`${url}/deleteComments`, { method: "DELETE", headers }).catch((error) => {
+        console.error('Error deleting comments: ', error);
     })
 }

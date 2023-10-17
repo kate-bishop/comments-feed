@@ -12,7 +12,7 @@ const CommentCard: React.FC<CommentCardProps> = ({
     <div className="comment-card" key={comment.id}>
       <p>{comment.message}</p>
       <p>{comment.name}</p>
-      <p>{comment.createdAt?.toDateString()}</p>
+      <p>{new Date(comment.created).toDateString()}</p>
     </div>
   );
 }

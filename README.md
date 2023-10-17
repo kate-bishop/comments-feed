@@ -27,11 +27,15 @@ npm install
 npm run dev
 ```
 
-### Project Planning
+## Project Planning
 [X] Run & connect to API locally
-[ ] Display comments in list
-[ ] Seed comments button (for ease of testing)
-[ ] Delete comments button (for ease of testing)
+[X] Display comments in list
+[X] Seed comments button (for ease of testing)
+[X] Delete comments button (for ease of testing)
+[ ] Styling
 [ ] Notify when a new comment is added
 [ ] Create comment input
 [ ] Write tests
+
+### Future Features
+- Sort order
