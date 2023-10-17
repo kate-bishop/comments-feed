@@ -2,6 +2,7 @@
 
 .app {
     font-family: 'Inter', sans-serif;
+    margin-bottom: 3rem;
 }
 
 h1 {
@@ -105,4 +106,34 @@ input[type=submit] {
     flex-direction: row;
     justify-content: center;
     gap: 1rem;
+}
+
+@media (max-width: 1024px) {
+    .comments-container {
+        padding: 1rem 20%;
+    }
+
+    .comment-form {
+        padding: 1rem 25%;
+    }
+}
+
+@media (max-width: 768px) {
+    .comments-container {
+        padding: 1rem 10%;
+    }
+
+    .comment-form {
+        padding: 1rem 15%;
+    }
+}
+
+@media (max-width: 480px) {
+    .comments-container {
+        padding: 1rem 5%;
+    }
+
+    .comment-form {
+        padding: 1rem 3%;
+    }
 }
