@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import { getComments, deleteComments } from './utils/api';
+import { getComments, deleteComments, postComment } from './utils/api';
 import { seedStarterComments } from './utils/utils';
 import { Comment } from './utils/types';
 import './App.css';
 import CommentCard from './components/CommentCard';
+import CommentInput from './components/CommentInput';
 
 const App: React.FC = () => {
   const [comments, setComments] = useState<Comment[]>([])
 
   useEffect(() => {
     getComments().then((data) => {
-      setComments(data);
+      setComments(data.reverse());
     });
   }, [])
 
@@ -23,7 +24,14 @@ const App: React.FC = () => {
   const seedComments = () => {
     seedStarterComments()
     getComments().then((data) => {
-      setComments(data);
+      setComments(data.reverse());
+    });
+  }
+
+  const postCommentAction = (name: string, message: string) => {
+    postComment(name, message);
+    getComments().then((data) => {
+      setComments(data.reverse());
     });
   }
 
@@ -33,16 +41,18 @@ const App: React.FC = () => {
         <h1>
           Comments Feed
         </h1>
-        <div className="buttons-container">
-          <button onClick={clearComments} className="delete">Clear Comments</button>
-          <button onClick={seedComments} className="seed">Seed Comments</button>
-        </div>
+        <CommentInput postCommentAction={postCommentAction} />
       </header>
       <body>
         <div className="comments-container">
-          {comments.map((comment) => {
+          {comments.reverse().map((comment) => {
             return <CommentCard comment={comment} key={comment.id} />
-          })}</div>
+          })}
+        </div>
+        <div className="data-buttons-container">
+          <button onClick={seedComments} className="seed">Seed Comments</button>
+          <button onClick={clearComments} className="delete">Clear Comments</button>
+        </div>
       </body>
     </div>
   );

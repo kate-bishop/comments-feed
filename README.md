@@ -35,9 +35,9 @@ npm run dev
 - [X] Display comments in list
 - [X] Seed comments button (for ease of testing)
 - [X] Delete comments button (for ease of testing)
-- [ ] Styling
+- [X] Styling
 - [ ] Notify when a new comment is added
-- [ ] Create comment input
+- [X] Create comment input
 - [ ] Write tests
 
 ### Future Features
@@ -45,3 +45,4 @@ npm run dev
 - Use websocket instead of polling for new comments
 - Sort and filter comments
 - Author can edit or delete a post
+- Error handling on comment form

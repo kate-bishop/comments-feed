@@ -12,7 +12,7 @@ const CommentCard: React.FC<CommentCardProps> = ({
   const dateTimeString = `${dateTime.toDateString()} at ${dateTime.toLocaleTimeString()}`;
   
   return (
-    <div className="comment-card" key={comment.id}>
+    <div className="comment-card">
       <p className="message">{comment.message}</p>
       <p className="name">{comment.name} on {dateTimeString}</p>
     </div>
