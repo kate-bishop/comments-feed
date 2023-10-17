@@ -13,6 +13,14 @@ const App: React.FC = () => {
     getComments().then((data) => {
       setComments(data.reverse());
     });
+    const interval = setInterval(() => {
+      getComments().then((data) => {
+        // TODO if length is greater than comments, send notification
+        setComments(data.reverse());
+      });
+    }, 5000)
+
+    return () => clearInterval(interval)
   }, [])
 
   const clearComments = () => {
@@ -43,17 +51,15 @@ const App: React.FC = () => {
         </h1>
         <CommentInput postCommentAction={postCommentAction} />
       </header>
-      <body>
-        <div className="comments-container">
-          {comments.reverse().map((comment) => {
-            return <CommentCard comment={comment} key={comment.id} />
-          })}
-        </div>
-        <div className="data-buttons-container">
-          <button onClick={seedComments} className="seed">Seed Comments</button>
-          <button onClick={clearComments} className="delete">Clear Comments</button>
-        </div>
-      </body>
+      <div className="comments-container">
+        {comments.reverse().map((comment) => {
+          return <CommentCard comment={comment} key={comment.id} />
+        })}
+      </div>
+      <div className="data-buttons-container">
+        <button onClick={seedComments} className="seed">Seed Comments</button>
+        <button onClick={clearComments} className="delete">Clear Comments</button>
+      </div>
     </div>
   );
 }

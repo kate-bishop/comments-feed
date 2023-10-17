@@ -36,8 +36,10 @@ npm run dev
 - [X] Seed comments button (for ease of testing)
 - [X] Delete comments button (for ease of testing)
 - [X] Styling
-- [ ] Notify when a new comment is added
 - [X] Create comment input
+- [X] Update feed when new comment is added
+Ran out of time:
+- [ ] Notify when a new comment is added (see TODO comment in src/App.tsx ln18)
 - [ ] Write tests
 
 ### Future Features
