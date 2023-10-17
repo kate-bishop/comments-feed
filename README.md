@@ -1,8 +1,10 @@
 # Kate Bishop's Comments Feed UI
 
-This app is for users to read and post comments in a feed. If a comment is posted while the user is on the page, they will receive a notification.
+This app is for users to read and post comments in a feed. If a comment is posted while the user is on the page, the feed will update within 5 seconds.
 
 For local testing usage, buttons are provided to seed the comment feed, and delete all comments.
+
+<img width="1724" alt="Screenshot 2023-10-17 at 11 44 45 AM" src="https://github.com/kate-bishop/comments-feed/assets/22239024/ae9eee0b-6537-4bf2-a89a-e5689d963065">
 
 ## How to Run Locally
 
@@ -48,3 +50,4 @@ Ran out of time:
 - Sort and filter comments
 - Author can edit or delete a post
 - Error handling on comment form
+
