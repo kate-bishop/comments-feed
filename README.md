@@ -40,14 +40,14 @@ npm run dev
 - [X] Styling
 - [X] Create comment input
 - [X] Update feed when new comment is added
+
 Ran out of time:
-- [ ] Notify when a new comment is added (see TODO comment in src/App.tsx ln18)
+- [ ] Notify when a new comment is added (see TODO comment [here](https://github.com/kate-bishop/comments-feed/blob/main/src/App.tsx#L18))
 - [ ] Write tests
 
-### Future Features
+### Future Improvements
 - Lazy loading/pagination
 - Use websocket instead of polling for new comments
+- Error handling on comment form
 - Sort and filter comments
 - Author can edit or delete a post
-- Error handling on comment form
-
