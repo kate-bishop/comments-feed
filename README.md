@@ -4,7 +4,7 @@ This app is for users to read and post comments in a feed. If a comment is poste
 
 For local testing usage, buttons are provided to seed the comment feed, and delete all comments.
 
-<img width="1724" alt="Screenshot 2023-10-17 at 11 44 45 AM" src="https://github.com/kate-bishop/comments-feed/assets/22239024/ae9eee0b-6537-4bf2-a89a-e5689d963065">
+<img width="1724" alt="Comments Feed Screenshot" src="https://github.com/kate-bishop/comments-feed/assets/22239024/05070bfa-69c0-4972-8cf7-68560d85b782">
 
 ## How to Run Locally
 
