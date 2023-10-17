@@ -1,14 +1,11 @@
 const url = "http://localhost:3001";
-const postOptions = {
-    method: "POST",
-    headers: {
-        "Content-Type": "application/json",
-    }
+const headers = {
+    "Content-Type": "application/json",
 }
 
 export const postComment = (name: string, message: string) => {
     const comment = { name, message }
-    fetch(`${url}/createComment`, { ...postOptions, body: JSON.stringify(comment) }).then((data) => {
+    fetch(`${url}/createComment`, { method: "POST", headers, body: JSON.stringify(comment) }).then((data) => {
         return data;
     }).catch((error) => {
         console.error('Error posting comment', error);
@@ -16,7 +13,7 @@ export const postComment = (name: string, message: string) => {
 }
 
 export const getCommentById = (id: number) => {
-    fetch(`${url}/getComment`, { body: JSON.stringify({ id: id }) }).then((data) => {
+    fetch(`${url}/getComment`, { method: "GET", headers, body: JSON.stringify({ id: id }) }).then((data) => {
         return data;
     }).catch((error) => {
         console.error(`Error getting comment ${id}`, error);
@@ -24,7 +21,7 @@ export const getCommentById = (id: number) => {
 }
 
 export const getComments = () => {
-    fetch(`${url}/getComments`).then((data) => {
+    fetch(`${url}/getComments`, { method: "GET", headers }).then((data) => {
         return data;
     }).catch((error) => {
         console.error('Error getting comments', error);
@@ -32,7 +29,7 @@ export const getComments = () => {
 }
 
 export const deleteComments = () => {
-    fetch(`${url}/deleteComments`).then((data) => {
+    fetch(`${url}/deleteComments`, { method: "DELETE", headers }).then((data) => {
         return data;
     }).catch((error) => {
         console.error('Error deleting comments', error);
