@@ -15,7 +15,8 @@ const App: React.FC = () => {
     });
     const interval = setInterval(() => {
       getComments().then((data) => {
-        // TODO if length is greater than comments, send notification
+        // TODO - if length is greater than comments, send notification via toast.
+        //    if length is the same, don't do anything (no need to re-set comments like we're doing here)
         setComments(data.reverse());
       });
     }, 5000)
