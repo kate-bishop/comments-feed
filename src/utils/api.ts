@@ -21,11 +21,14 @@ export const getCommentById = (id: number) => {
 }
 
 export const getComments = () => {
-    fetch(`${url}/getComments`, { method: "GET", headers }).then((data) => {
-        return data;
-    }).catch((error) => {
-        console.error('Error getting comments', error);
-    })
+    return fetch(`${url}/getComments`, { method: "GET", headers }).then((response) => {
+        return response.json().then((data) => {
+            return data;
+        }).catch((error) => {
+            console.error('Error getting comments: ', error);
+            return [];
+        })
+    });
 }
 
 export const deleteComments = () => {
