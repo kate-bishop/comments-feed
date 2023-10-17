@@ -53,9 +53,11 @@ const App: React.FC = () => {
         <CommentInput postCommentAction={postCommentAction} />
       </header>
       <div className="comments-container">
-        {comments.reverse().map((comment) => {
-          return <CommentCard comment={comment} key={comment.id} />
-        })}
+        {comments.length ?
+          comments.reverse().map((comment) => {
+            return <CommentCard comment={comment} key={comment.id} />
+          })
+          : <p className="no-comments">No comments yet!</p>}
       </div>
       <div className="data-buttons-container">
         <button onClick={seedComments} className="seed">Seed Comments</button>

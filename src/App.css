@@ -41,6 +41,12 @@ input[type=submit] {
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    & .no-comments {
+        text-align: center;
+        font-style: italic;
+        color: #575757;
+    }
 }
 
 .comment-card {
