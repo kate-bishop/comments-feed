@@ -13,7 +13,7 @@ yarn
 yarn start
 ```
 
-### [comments-feed-api](https://github.com/kate-bishop/comments-feed-api)
+### comments-feed-api
 
 Start the API so it runs on localhost:3001. I made a few updates to the provided front-end-cyoa repository to resolve some errors on my machine:
 
@@ -28,14 +28,14 @@ npm run dev
 ```
 
 ## Project Planning
-[X] Run & connect to API locally
-[X] Display comments in list
-[X] Seed comments button (for ease of testing)
-[X] Delete comments button (for ease of testing)
-[ ] Styling
-[ ] Notify when a new comment is added
-[ ] Create comment input
-[ ] Write tests
+- [X] Run & connect to API locally
+- [X] Display comments in list
+- [X] Seed comments button (for ease of testing)
+- [X] Delete comments button (for ease of testing)
+- [ ] Styling
+- [ ] Notify when a new comment is added
+- [ ] Create comment input
+- [ ] Write tests
 
 ### Future Features
 - Sort order
