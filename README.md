@@ -47,7 +47,7 @@ Ran out of time:
 
 ### Future Improvements
 - Lazy loading/pagination
-- Use websocket instead of polling for new comments
+- Use webhook instead of polling for new comments
 - Error handling on comment form
 - Sort and filter comments
 - Author can edit or delete a post
