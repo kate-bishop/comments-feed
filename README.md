@@ -10,7 +10,7 @@ For local testing usage, buttons are provided to seed the comment feed, and dele
 
 I made a few updates to the provided front-end-cyoa repository that are needed to run this app locally. Please clone [comments-feed-api](https://github.com/kate-bishop/comments-feed-api) and use as the API server. Those changes include:
 
-1. CORS configured to accept calls from localhost:3000 ([see configuration here](https://github.com/kate-bishop/comments-feed-api/blob/main/server/index.js#L10))
+1. CORS package added configured to accept calls from localhost:3000 ([see the configuration change here](https://github.com/kate-bishop/comments-feed-api/blob/main/server/index.js#L10))
 2. Package version for sqlite3 updated to "^5.0.3"
     - Depending on the version installed on your machine, you may need to downgrade this package back to "^4.0.7"
 
